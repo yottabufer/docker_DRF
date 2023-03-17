@@ -7,3 +7,6 @@ class Client(models.Model):
     company_name = models.CharField(max_length=100)
     full_address = models.CharField(max_length=100)
     object = models.Manager
+
+    def __str__(self):
+        return f'Client - {self.user}: Company - {self.company_name}'
