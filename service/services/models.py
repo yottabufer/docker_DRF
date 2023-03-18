@@ -7,6 +7,7 @@ from clients.models import Client
 class Service(models.Model):
     name = models.CharField(max_length=50)
     full_price = models.PositiveIntegerField()
+    objects = models.Manager()
 
 
 class Plan(models.Model):
@@ -18,9 +19,11 @@ class Plan(models.Model):
 
     plan_type = models.CharField(choices=PLAN_TYPES, max_length=10)
     discount_percent = models.PositiveIntegerField(default=0, validators=[MaxValueValidator(100)])
+    objects = models.Manager()
 
 
 class Subscription(models.Model):
     client = models.ForeignKey(Client, related_name='subscriptions', on_delete=models.PROTECT)
     service = models.ForeignKey(Service, related_name='subscriptions', on_delete=models.PROTECT)
     plan = models.ForeignKey(Plan, related_name='subscriptions', on_delete=models.PROTECT)
+    objects = models.Manager()
