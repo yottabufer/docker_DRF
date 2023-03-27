@@ -5,7 +5,7 @@
 ### Запуск
 1. Клонируем проект с репозитория
 ```python
-https://github.com/yottabufer/docker_DRF.git
+git clone https://github.com/yottabufer/docker_DRF.git
 ```
 2. Переходим в папку созданную папку
 ```python
