@@ -5,7 +5,7 @@
 ### Запуск
 1. Клонируем проект с репозитория
 ```python
-git clone https://github.com/yottabufer/docker_DRF.git
+https://github.com/yottabufer/docker_DRF.git
 ```
 2. Переходим в папку созданную папку
 ```python
@@ -25,4 +25,10 @@ docker-compose run --rm web-app sh -c 'python manage.py migrate'
 5. Поднимаем docker
 ```python
 docker-compose up
+```
+
+
+После просмотра проекта можно удалить всё, кроме value, что бы освободить место
+```python
+docker system prune -a -f
 ```
