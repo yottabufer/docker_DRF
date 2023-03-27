@@ -70,7 +70,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'service.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -137,3 +136,15 @@ LOGGING = {
 # Celery - Distributed Task Queue
 # https://docs.celeryq.dev/en/latest/django/first-steps-with-django.html#using-celery-with-django
 CELERY_BROKER_URL = 'redis://redis:6379/0'
+
+# django_redis
+# https://github.com/jazzband/django-redis
+
+CACHES = {
+    'default': {
+        'BACKEND': "django_redis.cache.RedisCache",
+        'LOCATION': 'redis://redis:6379/1',
+    }
+}
+
+PRICE_CACHE_NAME = 'price_cache'
